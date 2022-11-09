@@ -2,7 +2,6 @@ public class Song
 {
     private String name;
     private String length;
-    private String tempo;
     private String genre;
     private String releaseDate;
 
@@ -16,6 +15,13 @@ public class Song
         setName(name);
         setLength(length);
     } // end Song constructor for name and length
+
+    public Song (String name, String genre, String releaseDate)
+    {
+        setName(name);
+        setGenre(genre);
+        setReleaseDate(releaseDate);
+    } // end Song constructor for name, genre, and release date
 
     public void setName (String name)
     {
@@ -43,6 +49,16 @@ public class Song
         }
     } // end setLength
 
+    public void setGenre(String genre)
+    {
+        this.genre = genre;
+    } // end setGenre
+
+    public void setReleaseDate(String releaseDate)
+    {
+        this.releaseDate = releaseDate;
+    } // end setReleaseDate
+
     public String getName ()
     {
         return name;
@@ -52,5 +68,14 @@ public class Song
     {
         return length;
     } // end getLength
+
+    public String getGenre()
+    {
+        return genre;
+    } // end getGenre
+
+    public String getReleaseDate() {
+        return releaseDate;
+    } // end getReleaseDate
 
 } // end Song class
