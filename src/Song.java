@@ -9,7 +9,6 @@ public class Song
     public Song (String name)
     {
         setName(name);
-        setLength(length);
     } // end Song constructor for name only
 
     public Song (String name, String length)
@@ -33,7 +32,15 @@ public class Song
 
     public void setLength(String length)
     {
-        this.length = length;
+        if (!length.matches("[0-9]+[:punct:][0-9][0-9]"))
+        {
+            // System.out.println("NOPE!");
+            this.length = "A song can't be that long!";
+        }
+        else
+        {
+            this.length = length;
+        }
     } // end setLength
 
     public String getName ()
