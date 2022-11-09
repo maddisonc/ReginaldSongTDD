@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SongTest
 {
-    // tests for NAME getters and setters
+    // tests for NAME getter and setter
     // when song name is traditional (capitals, lowercase, and spaces)
     @Test
-    void getNameTSLoveStoryPassed() {
+    void getNameLoveStoryPassed() {
         Song loveStory = new Song("Love Story");
         loveStory.setName("Love Story");
         assertTrue(loveStory.getName().matches("Love Story"));
@@ -38,7 +38,7 @@ class SongTest
     }
 
 
-    // tests for LENGTH getters and setters
+    // tests for LENGTH getter and setter
     // when length is normal (number:number number)
     @Test
     void getLengthSunsetRoadPassed() {
@@ -79,5 +79,61 @@ class SongTest
         assertTrue(SITYWTD.getLength().matches("A song can't be that long!"));
     }
 
+
+
+    // tests for GENRE getter and setter
+    // when genre is one word ("Genre")
+    @Test
+    void getGenreDawnPassed ()
+    {
+        Song dawn = new Song("Dawn (Go Away)");
+        dawn.setGenre("Motown");
+        assertTrue(dawn.getGenre().matches("Motown"));
+    }
+
+    // when genre is two words ("Genre Genre")
+    @Test
+    void getGenreCHPassed ()
+    {
+        Song clusterhug = new Song("Clusterhug");
+        clusterhug.setGenre("Indie pop");
+        assertTrue(clusterhug.getGenre().matches("Indie pop"));
+    }
+
+    // when genre is three words ("Genre Genre Genre")
+    @Test
+    void getGenreGLPassed ()
+    {
+        Song getLucky = new Song("Get Lucky");
+        getLucky.setGenre("Electronic dance music");
+        assertTrue(getLucky.getGenre().matches("Electronic dance music"));
+    }
+
+    // genre includes a special character
+    @Test
+    void getGenreTipsyPassed ()
+    {
+        Song dawn = new Song("Tipsy");
+        dawn.setGenre("R&B");
+        assertTrue(dawn.getGenre().matches("R&B"));
+    }
+
+    // genre includes a number (invalid, only genre names that include numbers are 2-step, 8-bit etc., excluded for this project)
+    @Test
+    void getGenreCO13Failed ()
+    {
+        Song classOf2013 = new Song("Class of 2013");
+        classOf2013.setGenre("2013");
+        assertTrue(classOf2013.getGenre().matches("That's not a real genre!"));
+    }
+
+    // genre is empty
+    @Test
+    void getGenreLYKFailed ()
+    {
+        Song lyk = new Song("Letting You Know");
+        lyk.setGenre("");
+        assertTrue(lyk.getGenre().matches("That's not a real genre!"));
+    }
 
 } // end tests
