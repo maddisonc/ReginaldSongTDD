@@ -1,4 +1,5 @@
-public class Main {
+public class Main
+{
     public static void main(String[] args)
     {
         Song bonIver = new Song("Bon Iver", "3:16", "Alternative/Indie", "07/30/2020");

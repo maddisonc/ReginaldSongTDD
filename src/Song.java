@@ -1,5 +1,6 @@
 public class Song
 {
+    // instance vars
     private String name;
     private String length;
     private String genre;
