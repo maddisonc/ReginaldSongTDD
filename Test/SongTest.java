@@ -149,7 +149,7 @@ class SongTest
     {
         Song lvrsrock = new Song("Lovers Rock");
         lvrsrock.setReleaseDate("07/30/2020");
-        assertTrue(lvrsrock.getReleaseDate().matches("06/05/2014"));
+        assertTrue(lvrsrock.getReleaseDate().matches("07/30/2020"));
     }
 
     // release date includes alpha

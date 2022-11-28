@@ -27,7 +27,6 @@ public class Song
     {
         if (!name.matches(".*"))
         {
-            // System.out.println("NOPE!");
             this.name = "Wrong format!";
         }
         else
@@ -40,7 +39,6 @@ public class Song
     {
         if (!length.matches("[0-9]+[:punct:][0-9][0-9]"))
         {
-            // System.out.println("NOPE!");
             this.length = "A song can't be that long!";
         }
         else
@@ -53,7 +51,6 @@ public class Song
     {
         if (!genre.matches("[:upper:]*"))
         {
-            // System.out.println("NOPE!");
             this.genre = genre;
         }
         else
@@ -64,7 +61,14 @@ public class Song
 
     public void setReleaseDate(String releaseDate)
     {
-        this.releaseDate = releaseDate;
+        if (releaseDate.matches("^(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/](19|20)\\d\\d$"))
+        {
+            this.releaseDate = releaseDate;
+        }
+        else
+        {
+            this.releaseDate = "That's not a real release date!";
+        }
     } // end setReleaseDate
 
     public String getName ()
