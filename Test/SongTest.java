@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SongTest
 {
+
+
+
     // tests for NAME getter and setter
     // when song name is traditional (capitals, lowercase, and spaces)
     @Test
@@ -36,6 +39,7 @@ class SongTest
         sunsetRoad.setName("サンセット・ロード");
         assertTrue(sunsetRoad.getName().matches("サンセット・ロード"));
     }
+
 
 
     // tests for LENGTH getter and setter
@@ -125,6 +129,63 @@ class SongTest
         Song lyk = new Song("Letting You Know");
         lyk.setGenre("");
         assertTrue(lyk.getGenre().matches("That's not a real genre!"));
+    }
+
+
+
+    // tests for RELEASE DATE getter and setter
+    // release date is in correct format
+    @Test
+    void getReleaseDateBonIverPassed ()
+    {
+        Song boniver = new Song("Bon Iver");
+        boniver.setReleaseDate("07/30/2020");
+        assertTrue(boniver.getReleaseDate().matches("07/30/2020"));
+    }
+
+    // release date is in correct format, testing different month/day/year combination
+    @Test
+    void getReleaseDateLvrsRockPassed ()
+    {
+        Song lvrsrock = new Song("Lovers Rock");
+        lvrsrock.setReleaseDate("07/30/2020");
+        assertTrue(lvrsrock.getReleaseDate().matches("06/05/2014"));
+    }
+
+    // release date includes alpha
+    @Test
+    void getReleaseDateMrsMagicFailed ()
+    {
+        Song mrsmagic = new Song("Mrs Magic");
+        mrsmagic.setReleaseDate("September 27, 2019");
+        assertTrue(mrsmagic.getReleaseDate().matches("That's not a real release date!"));
+    }
+
+    // release date has too many numbers
+    @Test
+    void getReleaseDateRememberYouFailed ()
+    {
+        Song ry = new Song("Remember You");
+        ry.setReleaseDate("09/001/20212121");
+        assertTrue(ry.getReleaseDate().matches("That's not a real release date!"));
+    }
+
+    // release date does not have enough numbers
+    @Test
+    void getReleaseDatePhilophobiaFailed ()
+    {
+        Song philophobia = new Song("Philophobia");
+        philophobia.setReleaseDate("2020");
+        assertTrue(philophobia.getReleaseDate().matches("That's not a real release date!"));
+    }
+
+    // release date is empty
+    @Test
+    void getReleaseDateSGTFailed ()
+    {
+        Song sillygirl = new Song("Silly Girl");
+        sillygirl.setReleaseDate("");
+        assertTrue(sillygirl.getReleaseDate().matches("That's not a real release date!"));
     }
 
 } // end tests
