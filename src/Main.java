@@ -12,11 +12,10 @@ public class Main {
         testPlaylist[2] = helloWorld;
         testPlaylist[3] = oldie;
 
-
         for (Song i: testPlaylist)
         {
             System.out.println(i.getName()+" (" + i.getLength()+")" + " is longer than " + getLongerThan(i) + ".");
-        }
+        } // prints out test songs and what they are longer than
 
     } // end main method
 
@@ -28,5 +27,6 @@ public class Main {
             return songLengths[0];
         }
         return songLengths[1];
-    }
+    } // end getLongerThan method
+
 } // end main class
