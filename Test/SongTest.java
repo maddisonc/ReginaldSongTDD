@@ -4,9 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SongTest
 {
-
-
-
     // tests for NAME getter and setter
     // when song name is traditional (capitals, lowercase, and spaces)
     @Test
@@ -148,8 +145,8 @@ class SongTest
     void getReleaseDateLvrsRockPassed ()
     {
         Song lvrsrock = new Song("Lovers Rock");
-        lvrsrock.setReleaseDate("07/30/2020");
-        assertTrue(lvrsrock.getReleaseDate().matches("07/30/2020"));
+        lvrsrock.setReleaseDate("09/05/2014");
+        assertTrue(lvrsrock.getReleaseDate().matches("09/05/2014"));
     }
 
     // release date includes alpha
