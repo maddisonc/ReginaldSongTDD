@@ -118,15 +118,6 @@ class SongTest
         assertTrue(dawn.getGenre().matches("R&B"));
     }
 
-    // genre includes a number (invalid, only genre names that include numbers are 2-step, 8-bit etc., excluded for this project)
-    @Test
-    void getGenreCO13Failed ()
-    {
-        Song classOf2013 = new Song("Class of 2013");
-        classOf2013.setGenre("2013");
-        assertTrue(classOf2013.getGenre().matches("That's not a real genre!"));
-    }
-
     // genre is empty
     @Test
     void getGenreLYKFailed ()

@@ -51,7 +51,15 @@ public class Song
 
     public void setGenre(String genre)
     {
-        this.genre = genre;
+        if (!genre.matches("[:upper:]*"))
+        {
+            // System.out.println("NOPE!");
+            this.genre = genre;
+        }
+        else
+        {
+            this.genre = "That's not a real genre!";
+        }
     } // end setGenre
 
     public void setReleaseDate(String releaseDate)
